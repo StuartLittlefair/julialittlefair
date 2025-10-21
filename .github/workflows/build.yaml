@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [24.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies & build
         run: |
-          npm install
+          npm ci
           npm run build
 
       - name: Deploy
