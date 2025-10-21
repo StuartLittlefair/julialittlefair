@@ -1,0 +1,21 @@
+---
+title: 'Book a lesson'
+layout: 'layouts/page.html'
+---
+<h3>Email me to enquire about booking a lesson:</h3>
+<form action="mailto:stuart.p.littlefair@gmail.com?subject=English lesson enquiry" method="post" enctype="text/plain"
+    enctype="multipart/form-data">
+    <fieldset>
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+
+        <label for="mail">E-mail:</label>
+        <input type="text" name="mail">
+
+        <label for="comment">Message:</label>
+        <textarea name="comment" placeholder="Enter a message here..." aria-label="email message"></textarea>
+
+    </fieldset>
+
+    <input type="submit" value="Send">
+</form>

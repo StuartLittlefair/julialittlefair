@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+<head>
+    <title>Julia Littlefair: English Teacher</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="{{site.url}}/css/pico.css">
+    <link rel="stylesheet" href="{{site.url}}/css/pico.colors.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .hero {
+            background-position: center;
+            background-size: cover;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "partials/site-head.html" %}
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    {% include "partials/site-foot.html" %}
+</body>
+
+</html>

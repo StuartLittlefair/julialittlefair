@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "name": "julialittlefair",
+  "scripts": {
+    "start": "ELEVENTY_ENV=development npx eleventy --serve",
+    "build": "ELEVENTY_ENV=production npx eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@picocss/pico": "^2.1.1",
+    "sass": "^1.93.2"
+  }
+}
