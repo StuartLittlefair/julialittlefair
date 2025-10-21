@@ -1,6 +1,6 @@
 {
-  "type": "module",
   "name": "julialittlefair",
+  "version": "1.0.0",
   "scripts": {
     "start": "ELEVENTY_ENV=development npx eleventy --serve",
     "build": "ELEVENTY_ENV=production npx eleventy"

@@ -1,7 +1,7 @@
-import * as sass from "sass";
-import * as path from "node:path";
+const sass = require("sass");
+const path = require("node:path");
 
-export default async function (eleventyConfig) {
+module.exports = function (eleventyConfig) {
     // Configure Eleventy
     // Set directories to pass through to the dist folder
     eleventyConfig.addPassthroughCopy('./src/css/*.css');
