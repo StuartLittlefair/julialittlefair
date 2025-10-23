@@ -3,19 +3,50 @@ title: 'Book a lesson'
 layout: 'layouts/page.html'
 ---
 <h3>Email me to enquire about booking a lesson:</h3>
-<form action="mailto:stuart.p.littlefair@gmail.com?subject=English lesson enquiry" method="post" enctype="text/plain"
-    enctype="multipart/form-data">
+<form id="email-form">
     <fieldset>
         <label for="name">Name:</label>
-        <input type="text" name="name">
+        <input type="text" id="name" name="name" placeholder="Name" aria-label="Name">
 
         <label for="mail">E-mail:</label>
-        <input type="text" name="mail">
+        <input type="text" id="mail" name="mail">
 
-        <label for="comment">Message:</label>
-        <textarea name="comment" placeholder="Enter a message here..." aria-label="email message"></textarea>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Enter a message here..." aria-label="email message"></textarea>
 
     </fieldset>
 
-    <input type="submit" value="Send">
+    <input id="submit" type="submit" value="Send">
 </form>
+
+<!-- Success and error modals -->
+<dialog closed id="modal-success">
+    <article>
+        <header class="pico-background-jade-50">
+            <button aria-label="Close" rel="prev" data-target="modal-example" onclick="toggleModal(event)"></button>
+            <p>
+                <strong>Thank You for Your Submission!</strong>
+            </p>
+        </header>
+        <p>
+            I'll respond to your query as soon as possible.
+        </p>
+    </article>
+</dialog>
+
+<dialog closed id="modal-error">
+    <article>
+        <header class="pico-background-red-100">
+            <button aria-label="Close" rel="prev" data-target="modal-example" onclick="toggleModal(event)"></button>
+            <p>
+                <strong>Oops! Something went wrong.</strong>
+            </p>
+        </header>
+        <p>
+            Please try again later.
+        </p>
+    </article>
+</dialog>
+
+<script src="{{site.url}}/js/email.js"></script>
+<script src="{{site.url}}/js/modals.js"></script>

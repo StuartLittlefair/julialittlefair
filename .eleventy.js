@@ -5,7 +5,7 @@ module.exports = function (eleventyConfig) {
     // Configure Eleventy
     // Set directories to pass through to the dist folder
     eleventyConfig.addPassthroughCopy('./src/css/*.css');
-    eleventyConfig.addPassthroughCopy('./src/js/');
+    eleventyConfig.addPassthroughCopy('./src/js/*');
     eleventyConfig.addPassthroughCopy('./src/images/');
 
     // SCSS Support
