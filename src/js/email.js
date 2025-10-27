@@ -1,4 +1,4 @@
-const url = "https://script.google.com/macros/s/AKfycbxM_APL0AsfFaGGTzo8SAG7n9tMMEqCYGgCPWt8wE_LDY2Jj2Ve_vGYuaJgyz5mrzSP/exec";
+const url = "https://script.google.com/macros/s/AKfycbx9jewdSQ1xKVceR7_jMXFFiKkbG9fF_3QfuMoqbzqEgr29a7VKmzFv6ntNq8GghcC8iQ/exec";
 
 const form = document.getElementById("email-form");
 const username = document.getElementById("name");
@@ -7,9 +7,6 @@ const message = document.getElementById("message");
 
 form.addEventListener("submit", onSubmit);
 
-mail.value = "s.littlefair@gmail.com";
-username.value = "Stuart Littlefair";
-message.value = "Hello, I would like to enquire about booking an English lesson.";
 
 function onSubmit(event) {
     console.log('Form submitted');
@@ -47,7 +44,10 @@ function onSubmit(event) {
 function addSendMail(data) {
     console.log(data);
     console.log(JSON.stringify(data));
-    document.getElementById("submit").disabled = true;
+    let button = document.getElementById("submit");
+    button.disabled = true;
+    button.setAttribute("aria-busy", "true");
+    button.setAttribute("aria-label", "Sending email");
     fetch(url, {
         redirect: 'follow',
         method: "POST",
@@ -62,7 +62,9 @@ function addSendMail(data) {
     ).then(
         json => {
             console.log(json);
-            document.getElementById("submit").disabled = false;
+            button.disabled = false;
+            button.removeAttribute("aria-busy");
+            button.removeAttribute("aria-label");
             if (json.status === "success") {
                 toggleModal(true);
             } else {
