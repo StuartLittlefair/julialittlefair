@@ -9,13 +9,7 @@
     <link rel="stylesheet" href="https://www.julialittlefair.uk/css/pico.css">
     <link rel="stylesheet" href="https://www.julialittlefair.uk/css/pico.colors.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        .hero {
-            background-position: center;
-            background-size: cover;
-            height: 200px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://www.julialittlefair.uk/css/custom.css">
 </head>
 
 <body>
@@ -44,22 +38,53 @@
         
 <!-- anything we want on every page put here -->
 <h3>Email me to enquire about booking a lesson:</h3>
-<form action="mailto:stuart.p.littlefair@gmail.com?subject=English lesson enquiry" method="post" enctype="text/plain"
-    enctype="multipart/form-data">
+<form id="email-form">
     <fieldset>
         <label for="name">Name:</label>
-        <input type="text" name="name">
+        <input type="text" id="name" name="name" placeholder="Name" aria-label="Name">
 
         <label for="mail">E-mail:</label>
-        <input type="text" name="mail">
+        <input type="text" id="mail" name="mail">
 
-        <label for="comment">Message:</label>
-        <textarea name="comment" placeholder="Enter a message here..." aria-label="email message"></textarea>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Enter a message here..." aria-label="email message"></textarea>
 
     </fieldset>
 
-    <input type="submit" value="Send">
+    <input id="submit" type="submit" value="Send">
 </form>
+
+<!-- Success and error modals -->
+<dialog closed id="modal-success">
+    <article>
+        <header class="pico-background-jade-50">
+            <button aria-label="Close" rel="prev" data-target="modal-example" onclick="toggleModal(event)"></button>
+            <p>
+                <strong>Thank You for Your Submission!</strong>
+            </p>
+        </header>
+        <p>
+            I'll respond to your query as soon as possible.
+        </p>
+    </article>
+</dialog>
+
+<dialog closed id="modal-error">
+    <article>
+        <header class="pico-background-red-100">
+            <button aria-label="Close" rel="prev" data-target="modal-example" onclick="toggleModal(event)"></button>
+            <p>
+                <strong>Oops! Something went wrong.</strong>
+            </p>
+        </header>
+        <p>
+            Please try again later.
+        </p>
+    </article>
+</dialog>
+
+<script src="https://www.julialittlefair.uk/js/email.js"></script>
+<script src="https://www.julialittlefair.uk/js/modals.js"></script>
 
     </main>
     <footer class="container">
