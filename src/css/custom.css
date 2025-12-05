@@ -4,3 +4,26 @@
     height: 200px;
     background-color: var(--pico-background-color);
 }
+
+
+.grid>div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--pico-grid-row-gap);
+}
+
+.grid>div>article {
+    flex: 1;
+    position: relative;
+}
+
+.grid>div>article>div {
+    padding-bottom: 1em;
+}
+
+
+.grid>div>article>footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
